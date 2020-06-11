@@ -1,0 +1,123 @@
+@import "base/animations";
+@import "base/base";
+@import "base/utilities";
+@import "base/typography";
+
+@import "abstracts/variables";
+@import "abstracts/mixin";
+@import "abstracts/functions";
+
+@import "component/popup"; 
+@import "component/button";
+@import "component/bg-video";
+@import "component/card";
+@import "component/composition";
+@import "component/feature-box";
+@import "component/story";
+@import "component/form"; 
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/footer";
+@import "layout/navigation";
+
+@import "pages/home";
+
+
+
+//typography
+
+body{
+  font-family: "lato";
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark; 
+
+  @include respond(tab-port){
+    padding: 0;                    
+  }
+}
+
+
+
+.heading-primary{
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+   
+  &--main{
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name:moveInLeft ;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    @include respond(phone){
+      letter-spacing: .9rem;
+      font-size: 5rem;                     
+    }
+  }
+  &--sub{
+   display: block;
+   font-size: 2.5rem;
+   font-weight: 700;
+   letter-spacing: 1.8rem;
+   animation-name:moveInRight ;
+   animation-duration: 1s;
+   animation-timing-function: ease-out;
+  
+   @include respond(phone){
+    letter-spacing: .5rem;                   
+  }
+  }
+  
+  }
+  .heading-secondary{
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background-image: linear-gradient(to right , $color-primary-light,$color-primary-dark);
+    -webkit-background-clip: text;
+    letter-spacing: .2rem;
+    color: transparent;
+    transition: all .2s;
+
+    @include respond(tab-port){
+      font-size: 3rem;                   
+    }
+
+    @include respond(phone){
+      font-size: 2.5rem;                   
+    }
+    
+    &:hover{
+      transform: skewY(2deg) skewX(15deg) scale(1.1);
+      box-shadow: .5rem 1rem 2rem rgba($color-black, .2) ;
+    }
+
+  }
+  .heading-tertiary{
+    font-size:$default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+
+  }
+  .paragraph{
+    font-size: $default-font-size;
+
+    &:not(:last-child){
+      margin-bottom: 3rem;
+    }
+
+  }
+
+
+
+//popup
+
+
